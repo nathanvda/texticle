@@ -2,7 +2,7 @@ module Texticle
   class FullTextIndex # :nodoc:
     attr_accessor :index_columns
 		cattr_accessor :rails_models_path
-		@@rails_models_path =  File.join(Rails.root,"app","models")
+		# @@rails_models_path =  File.join(Rails.root,"app","models")
 
     def initialize name, dictionary, model_class, &block
       @name           = name
