@@ -75,7 +75,6 @@ module Texticle
           to_tsquery(#{connection.quote(dictionary)}, #{connection.quote(term)})) as rank",
         :conditions =>
           ["#{this_index.to_s} @@ to_tsquery(?,?)", dictionary, term],
-        :order => 'rank DESC'
       }
     }
 
@@ -94,7 +93,6 @@ module Texticle
       {
         :select => "#{table_name}.*, #{similarities} as rank",
         :conditions => conditions,
-        :order => 'rank DESC'
       }
     }
 
